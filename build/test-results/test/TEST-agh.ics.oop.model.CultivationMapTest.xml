@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="agh.ics.oop.model.CultivationMapTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2026-01-19T15:46:00.313Z" hostname="ASUSVIVOBOOK" time="0.061">
+  <properties/>
+  <testcase name="checkVertilityPositive()" classname="agh.ics.oop.model.CultivationMapTest" time="0.044"/>
+  <testcase name="checkGrowPlants()" classname="agh.ics.oop.model.CultivationMapTest" time="0.005"/>
+  <testcase name="checkBounds()" classname="agh.ics.oop.model.CultivationMapTest" time="0.003"/>
+  <testcase name="checkVertilityWithWeakAnimal()" classname="agh.ics.oop.model.CultivationMapTest" time="0.002"/>
+  <system-out><![CDATA[0
+0
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

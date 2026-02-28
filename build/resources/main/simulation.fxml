@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="agh.ics.oop.presenter.SimulationPresenter"
+            minHeight="700.0" minWidth="1000.0">
+
+    <left>
+        <VBox spacing="8" style="-fx-padding: 10; -fx-background-color: #eee; -fx-min-width: 250;">
+            <Label text="Statystyki Ogólne" style="-fx-font-weight: bold; -fx-font-size: 14px;"/>
+            <Separator/>
+            <Label fx:id="dayLabel" text="Dzień: 0"/>
+            <Label fx:id="animalCountLabel" text="Zwierzaki: 0"/>
+            <Label fx:id="plantCountLabel" text="Rośliny: 0"/>
+            <Label fx:id="freeFieldsLabel" text="Wolne pola: -"/>
+            <Separator/>
+            <Label fx:id="avgEnergyLabel" text="Śr. Energia: -"/>
+            <Label fx:id="avgLifeSpanLabel" text="Śr. długość życia: -"/>
+            <Label fx:id="avgChildrenLabel" text="Śr. liczba dzieci: -"/>
+            <Label text="Dominujący Genotyp:" style="-fx-font-weight: bold;"/>
+            <Label fx:id="dominantGenotypeLabel" text="-" wrapText="true" maxWidth="230"/>
+
+            <Separator/>
+            <Button fx:id="pauseButton" text="Pauza / Wznów" onAction="#onPauseClicked"
+                    maxWidth="Infinity"/>
+
+            <Button text="Zakończ Rozgrywkę" onAction="#onQuitClicked"
+                    maxWidth="Infinity" style="-fx-background-color: #ffcccc; -fx-text-fill: darkred; -fx-border-color: red;"/>
+
+            <Separator/>
+            <Label text="Śledzony Zwierzak:" style="-fx-font-weight: bold; -fx-font-size: 14px;"/>
+            <Label fx:id="selectedAnimalInfoLabel" text="(Kliknij zwierzaka)" wrapText="true"/>
+
+            <Separator/>
+            <Label text="Wykres:" style="-fx-font-weight: bold;"/>
+            <ComboBox fx:id="chartStatsSelector" maxWidth="Infinity"/>
+        </VBox>
+    </left>
+
+    <center>
+        <VBox alignment="CENTER" spacing="10" style="-fx-padding: 10; -fx-background-color: #333;">
+            <Label fx:id="moveInfoLabel" text="Symulacja działa..." textFill="white"/>
+
+            <Canvas fx:id="mapCanvas" width="500" height="500" onMouseClicked="#onMapClicked"/>
+
+            <LineChart fx:id="statsChart" createSymbols="false" maxHeight="200" style="-fx-background-color: white;">
+                <xAxis>
+                    <NumberAxis label="Dzień" />
+                </xAxis>
+                <yAxis>
+                    <NumberAxis label="Wartość" />
+                </yAxis>
+            </LineChart>
+        </VBox>
+    </center>
+
+</BorderPane>

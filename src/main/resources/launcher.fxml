@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="agh.ics.oop.presenter.LauncherPresenter"
+      spacing="10" alignment="CENTER" prefHeight="700.0" prefWidth="450.0"
+      style="-fx-padding: 20;">
+
+    <Label text="Konfiguracja Symulacji" style="-fx-font-weight: bold; -fx-font-size: 16px;"/>
+
+    <Separator/>
+    <Label text="Presety:" style="-fx-font-weight: bold;"/>
+    <HBox spacing="10" alignment="CENTER">
+        <ComboBox fx:id="presetComboBox" promptText="Wybierz..." prefWidth="150.0"/>
+        <Button text="Wczytaj" onAction="#onLoadPresetClicked"/>
+        <Button text="Zapisz" onAction="#onSavePresetClicked"/>
+    </HBox>
+    <Separator/>
+
+    <GridPane hgap="10" vgap="5">
+        <Label text="Szerokość mapy:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <TextField fx:id="widthField" text="20" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+        <Label text="Wysokość mapy:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <TextField fx:id="heightField" text="20" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+        <Label text="Startowe zwierzaki:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <TextField fx:id="startAnimalsField" text="15" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+        <Label text="Energia startowa:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+        <TextField fx:id="startEnergyField" text="20" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+        <Label text="Energia z rośliny:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+        <TextField fx:id="plantEnergyField" text="10" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+
+        <Label text="Roślin dziennie:" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+        <TextField fx:id="plantsPerDayField" text="5" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+    </GridPane>
+
+    <Separator/>
+    <Label text="Opcje Wariantu C (Żyzne Ścieżki):" style="-fx-font-weight: bold;"/>
+    <GridPane hgap="10" vgap="5">
+        <Label text="Min. energia do uprawy:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <TextField fx:id="minEnergyToCultivateField" text="15" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+        <Label text="Czas życia gleby (dni):" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <TextField fx:id="fertilityDecayField" text="10" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+        <Label text="Gryzy super-rośliny:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <TextField fx:id="superPlantBitesField" text="3" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+    </GridPane>
+
+    <Separator/>
+    <Label text="Wybierz wariant mapy:" style="-fx-font-weight: bold;"/>
+    <ComboBox fx:id="mapVariantComboBox" prefWidth="200.0" />
+
+    <Button text="START SYMULACJI" onAction="#onSimulationStartClicked"
+            style="-fx-font-size: 14px; -fx-padding: 10 30; -fx-background-color: lightgreen;"/>
+</VBox>
