@@ -1,8 +1,55 @@
-# PO_2025_PN1645_CIESIELCZYK_KOZYRA    
-**Imię i nazwisko:** Szymon Ciesielczyk Bartosz Kozyra    
-**Grupa i godzina zajęć**: gr.6 Poniedziałek 16:45      
-**Diagram klas:**
+# 🌍 Darwin World - Symulacja Ewolucyjna Ekosystemu
 
+![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white)
+![JavaFX](https://img.shields.io/badge/JavaFX-FF0000?style=for-the-badge&logo=java&logoColor=white)
+![OOP](https://img.shields.io/badge/OOP-Principles-blue?style=for-the-badge)
+
+## 📖 O Projekcie
+
+https://github.com/user-attachments/assets/0abf9f23-6ea4-4dc8-a64b-ac21eeb1de19
+
+
+
+Darwin World to oparta na programowaniu obiektowym symulacja ekosystemu, inspirowana procesami ewolucyjnymi opisanymi w książkach "Land of Lisp" oraz artykułach z "Scientific American". Projekt został zrealizowany w parach w ramach przedmiotu Programowanie Obiektywne na Akademii Górniczo-Hutniczej (AGH).
+
+Symulacja generuje świat, w którym zwierzaki (roślinożercy) poruszają się, jedzą rośliny, rozmnażają się i przekazują swoje cechy genetyczne potomstwu (wraz z losowymi mutacjami). Środowisko jest dynamiczne, a przetrwanie zależy od poziomu energii poszczególnych osobników.
+
+### ⚙️ Główne Mechaniki Symulacji
+Każdy dzień w symulacji składa się z następujących faz:
+1. **Śmierć:** Zwierzaki, których energia spadnie do zera, są usuwane z mapy.
+2. **Ruch:** Zwierzaki obracają się zgodnie ze swoim aktywnym genem i przemieszczają się na sąsiednie pole.
+3. **Jedzenie:** Zwierzaki zjadają rośliny na swoim polu, aby odzyskać energię. Konflikty o jedzenie rozstrzygane są na podstawie poziomu energii, wieku i liczby dzieci.
+4. **Rozmnażanie:** Najedzone zwierzaki znajdujące się na tym samym polu mogą się rozmnażać. Genotyp potomka to kombinacja genów rodziców (proporcjonalna do ich energii) poddana losowym mutacjom.
+5. **Wzrost roślin:** Na mapie wyrastają nowe rośliny.
+
+### 🌱 Funkcja Specjalna: Wariant C (Uprawianie ziemi)
+Ta konkretna implementacja zawiera **Wariant C: Uprawianie ziemi**. 
+W przeciwieństwie do standardowej symulacji, gdzie dżungla znajduje się na równiku, ten wariant wprowadza dynamiczny system żyzności gleby:
+* Miejsca, przez które przechodzą zwierzaki o dużej energii, stają się coraz bardziej żyzne.
+* Gdy gleba osiągnie odpowiedni próg żyzności, tymczasowo staje się preferowaną strefą wzrostu roślin (dżunglą).
+* Rośliny rosnące na żyznej glebie są większe i wystarczają na wiele posiłków (wiele wizyt zwierzaków), zanim znikną.
+
+## 💻 Technologie
+* **Język:** Java
+* **GUI:** JavaFX
+* **Architektura:** Programowanie Obiektywne (Wzorce projektowe, Clean Code, zasady SOLID)
+
+## 📊 Funkcje i Interfejs Użytkownika (UI)
+Aplikacja posiada rozbudowany interfejs graficzny, który pozwala na:
+* Konfigurację parametrów symulacji (rozmiar mapy, początkowa liczba zwierzaków/roślin, wartości energii, wskaźniki mutacji).
+* Uruchamianie wielu symulacji jednocześnie w osobnych oknach.
+* Wstrzymywanie (Pause) i wznawianie (Resume) symulacji w dowolnym momencie.
+* Śledzenie statystyk na żywo (całkowita liczba zwierzaków, roślin, średnia energia, najpopularniejsze genotypy).
+* Śledzenie historii konkretnego zwierzaka (genom, wiek, liczba dzieci, zjedzone rośliny).
+
+## 🚀 Jak uruchomić
+1. Sklonuj repozytorium na swój komputer.
+2. Zbuduj projekt w preferowanym środowisku IDE (zalecane IntelliJ IDEA) lub za pomocą narzędzia budującego (Gradle/Maven).
+3. Upewnij się, że SDK JavaFX jest poprawnie skonfigurowane w Twoim środowisku.
+4. Uruchom główną klasę aplikacji, aby włączyć menu konfiguracyjne.
+
+---
+*Projekt zrealizowany na przedmiot Programowanie Obiektywne (PO) na uczelni AGH.*
 ```mermaid
 classDiagram
     %% --- INTERFEJSY I ABSTRAKCJE ---
